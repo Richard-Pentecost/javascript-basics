@@ -1,41 +1,56 @@
 const createPerson = (name, age) => {
-  // your code here
+  return {
+    name,
+    age,
+  }
 };
 
-const getName = (object) => {
-  // your code here
-};
+const getName = (object) => object.name;
 
 const getProperty = (property, object) => {
-  // your code here
+  return object[property];
 };
 
 const hasProperty = (property, object) => {
-  // your code here
+  return Object.keys(object).indexOf(property) !== -1;
 };
 
-const isOver65 = (person) => {
-  // your code here
-};
+const isOver65 = (person) => person.age > 65;
 
 const getAges = (people) => {
-  // your code here
+  return people.map(person => person.age);
 };
 
 const findByName = (name, people) => {
-  // your code here
+  return people.find(person => {
+    if(person.name === name) {
+      return person;
+    }
+  })
 };
 
 const findHondas = (cars) => {
-  // your code here
+  return cars.filter(car => {
+    if(car.manufacturer === 'Honda') {
+      return car;
+    }
+  });
 };
 
 const averageAge = (people) => {
-  // your code here
+  return people.reduce((acc, next) => {
+    return acc + next.age;
+  }, 0) / people.length;
 };
 
 const createTalkingPerson = (name, age) => {
-  // your code here
+  return {
+    name,
+    age,
+    introduce: function(name) {;
+      return `Hi ${name}, my name is ${this.name} and I am ${this.age}!`;
+    }
+  }
 };
 
 module.exports = {

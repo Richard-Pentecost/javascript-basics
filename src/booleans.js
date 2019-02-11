@@ -60,7 +60,6 @@ const containsVowels = (string) => {
 
 const isLowerCase = (string) => {
   for (let i = 0; i < string.length; i++) {
-    //console.log(string.charCodeAt(1);
     if (string.charCodeAt(i) > 64 && string.charCodeAt(i) < 91) {
       return false;
     }
@@ -68,7 +67,6 @@ const isLowerCase = (string) => {
   return true;
 };
 
-//isLowerCase('Abc')
 module.exports = {
   negate,
   both,

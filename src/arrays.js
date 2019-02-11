@@ -1,55 +1,74 @@
 const getNthElement = (index, array) => array[index % array.length];
 
 const arrayToCSVString = (array) => {
-  return array.reduce((acc, next) => { return acc + ',' + next }, array[0])
+  return array.reduce((acc, next) => { 
+    if(acc === '') {
+      return acc + next;
+    } else {
+      return acc + ',' + next; 
+    }
+  }, '')
 };
 
 const csvStringToArray = (string) => string.split(',');
 
-const addToArray = (element, array) => array.push(element);
-
+const addToArray = (element, array) => {
+  array.push(element);
+}
 const addToArray2 = (element, array) => {
-  // your code here
+  const newArray = array.map((arrElement) => arrElement);
+  newArray.push(element);
+  return newArray;
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  return array.splice(index, 1);
 };
 
 const numbersToStrings = (numbers) => {
-  // your code here
+  return numbers.map(element => element.toString());
 };
 
-const uppercaseWordsInArray = (strings) => {
-  // your code here
-};
+const uppercaseWordsInArray = (strings) => strings.map(element => element.toUpperCase());
 
 const reverseWordsInArray = (strings) => {
-  // your code here
+  return strings.map(element => element.split('').reverse().join(''));
 };
 
 const onlyEven = (numbers) => {
-  // your code here
+  return numbers.filter(number => number % 2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  const elementForRemoving = array[index];
+  return array.filter(element => element !== elementForRemoving);
 };
 
 const elementsStartingWithAVowel = (strings) => {
-  // your code here
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  return strings.filter(element => vowels.indexOf(element[0].toLowerCase()) !== -1);
 };
 
 const removeSpaces = (string) => {
-  // your code here
+  return string.split(' ').join('');
 };
 
 const sumNumbers = (numbers) => {
-  // your code here
+  return numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
 };
 
 const sortByLastLetter = (strings) => {
-  // your code here
+  return strings.sort((a, b) => {
+    if (a[a.length - 1] < b[b.length - 1]) {
+      return -1;
+    }
+    else if (a[a.length - 1] > b[b.length - 1]) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  });
 };
 
 module.exports = {
