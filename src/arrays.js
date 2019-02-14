@@ -40,8 +40,7 @@ const onlyEven = (numbers) => {
 };
 
 const removeNthElement2 = (index, array) => {
-  const elementForRemoving = array[index];
-  return array.filter(element => element !== elementForRemoving);
+  return array.filter(element => element !== array[index]);
 };
 
 const elementsStartingWithAVowel = (strings) => {
