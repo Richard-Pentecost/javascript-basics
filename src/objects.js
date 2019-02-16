@@ -12,6 +12,8 @@ const getProperty = (property, object) => {
 };
 
 const hasProperty = (property, object) => {
+  // object has a prototype method called hasOwnProperty
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
   return Object.keys(object).indexOf(property) !== -1;
 };
 
@@ -38,6 +40,7 @@ const findHondas = (cars) => {
 };
 
 const averageAge = (people) => {
+  // simple and elegant
   return people.reduce((acc, next) => {
     return acc + next.age;
   }, 0) / people.length;
