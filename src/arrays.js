@@ -1,6 +1,9 @@
-const getNthElement = (index, array) => array[index % array.length];
+const getNthElement = (index, array) => array[index % array.length]; // nice
 
 const arrayToCSVString = (array) => {
+  // Array prototype has a .join() method that you can use for this
+  // return array.join(', ') 
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
   return array.reduce((acc, next) => { 
     if(acc === '') {
       return acc + next;
@@ -45,6 +48,8 @@ const removeNthElement2 = (index, array) => {
 
 const elementsStartingWithAVowel = (strings) => {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
+  // great approach, vowels.indexOf could be simplified to .includes() method prototype
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
   return strings.filter(element => vowels.indexOf(element[0].toLowerCase()) !== -1);
 };
 
