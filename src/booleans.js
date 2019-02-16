@@ -34,6 +34,7 @@ const isEven = (a) => a % 2 === 0;
 const isSquare = (a) => {
   let total;
   let iterator = 0;
+  // nice use of do while loop
   do {
     total = iterator ** 2;
     iterator++;
@@ -59,6 +60,10 @@ const containsVowels = (string) => {
 };
 
 const isLowerCase = (string) => {
+  // I don't think a loop is necessary to solve this problem
+  // you can simply compare the raw string argument provided
+  // against its .toLowerCase() representation
+  // return string == string.toLowerCase() // if values are equal than string is lowercase...
   for (let i = 0; i < string.length; i++) {
     if (string.charCodeAt(i) > 64 && string.charCodeAt(i) < 91) {
       return false;
